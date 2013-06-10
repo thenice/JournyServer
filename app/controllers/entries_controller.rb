@@ -25,7 +25,8 @@ class EntriesController < ApplicationController
   # GET /entries/new.json
   def new
     @entry = Entry.new
-
+    @journey = Journey.find(params[:id])
+    @journy.entries << @entry
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @entry }
