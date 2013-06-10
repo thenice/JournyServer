@@ -1,0 +1,33 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Note</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th>Journy</th>
+    <th>Photo description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.name %></td>
+    <td><%= entry.note %></td>
+    <td><%= entry.lat %></td>
+    <td><%= entry.long %></td>
+    <td><%= entry.journy_id %></td>
+    <td><%= entry.photo_description %></td>
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_entry_path %>

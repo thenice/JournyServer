@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @journy.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @journy.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_journy_path(@journy) %> |
+<%= link_to 'Back', journies_path %>
