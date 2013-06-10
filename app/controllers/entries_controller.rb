@@ -14,7 +14,6 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
-    @entry = j.attributes.merge({:entries => j.entries})
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @entry }
@@ -40,7 +39,7 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(params[:entry])
-    @journey = Journey.find(params[:id])
+    @journy = Journy.find(params[:id])
     @journy.entries << @entry
     respond_to do |format|
       if @entry.save

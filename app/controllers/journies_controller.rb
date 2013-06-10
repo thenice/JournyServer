@@ -14,7 +14,7 @@ class JourniesController < ApplicationController
   # GET /journies/1.json
   def show
     @journy = Journy.find(params[:id])
-
+    @journy = @journy.attributes.merge({:entries => @journy.entries})
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @journy }
