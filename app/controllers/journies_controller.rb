@@ -3,7 +3,7 @@ class JourniesController < ApplicationController
   # GET /journies.json
   def index
     @journies = Journy.all
-
+    debugger
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @journies }

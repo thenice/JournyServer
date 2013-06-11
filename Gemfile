@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 group :development do
   gem 'sqlite3', '~> 1.3.7'
+  gem 'debugger'
 end
 
 group :production do
@@ -43,4 +44,4 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+
