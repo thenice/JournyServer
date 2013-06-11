@@ -39,7 +39,8 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(params[:entry])
-    @journy = Journy.find(params[:id])
+    journey_id = params[:id] || params[:entry][:journy_id]
+    @journy = Journy.find(journey_id)
     @journy.entries << @entry
     respond_to do |format|
       if @entry.save
