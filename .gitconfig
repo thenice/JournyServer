@@ -1,0 +1,23 @@
+[color]
+	branch = auto
+	interactive = auto
+	status = auto
+	diff = auto
+[core]
+	editor = mate -w
+[user]
+	name = Daniel Cohen
+	email = daniel.michael.cohen@gmail.com
+[alias]
+    compactlog = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+    saylog = !sh -c 'git log | say' -
+    say = !sh -c 'say $1' -
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    intercommit = !sh -c 'git show "$1" > .git/commit1 && git show "$2" > .git/commit2 && interdiff .git/commit[12]' -
+    logfor = !sh -c 'git log -p --author="$1" | mate' -
+	meld = !/usr/local/git-meld/git-meld.pl
+[mergetool]
+	keepBackup = true
+[diff]
+    tool = vim
